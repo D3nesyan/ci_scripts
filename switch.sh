@@ -2,5 +2,6 @@
 
 rm -rf .circleci
 cp -rf $1 .circleci
-git commit -a -m "Update"
+git add .
+git commit -m "Update"
 git push
