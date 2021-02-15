@@ -9,3 +9,5 @@ script:
   - git clone https://$GITID:$GITPWD@github.com/Ratoriku/LAVENDER -b eleven --depth=1 kernel
   - git clone --depth=1 https://github.com/Ratoriku/AnyKernel3.git
   - git clone --depth=1 https://github.com/kdrag0n/proton-clang.git cbl
+  - cd kernel
+  - ./ci-build
