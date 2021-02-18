@@ -5,8 +5,9 @@ git:
   depth: 1
 script:
   - cd ${HOME}
-  - git clone https://$GITID:$GITPWD@github.com/Ratoriku/LAVENDER -b eleven --depth=1 kernel
+  - git clone https://$GITID:$GITPWD@github.com/Ratoriku/LAVENDER -b gcc --depth=1 kernel
   - git clone --depth=1 https://github.com/Ratoriku/AnyKernel3.git
-  - git clone --depth=1 https://github.com/kdrag0n/proton-clang.git cbl
+  - git clone --depth=1 https://github.com/arter97/arm64-gcc.git
+  - git clone --depth=1 https://github.com/arter97/arm32-gcc.git
   - cd kernel
   - ./ci-build
