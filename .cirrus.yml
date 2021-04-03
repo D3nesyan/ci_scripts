@@ -2,8 +2,8 @@ env:
   CIRRUS_CLONE_DEPTH: 1
 container:
   image: ubuntu:latest
-  cpu: 12
-  memory: 18G
+  cpu: 8
+  memory: 8G
   use_in_memory_disk: true
 task:
   setup_script:
