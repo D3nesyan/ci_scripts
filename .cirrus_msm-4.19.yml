@@ -14,9 +14,8 @@ task:
   - apt-get update && apt-get install -y build-essential bc python curl git zip gcc-aarch64-linux-gnu gcc-arm-linux-gnueabi libssl-dev wget libfl-dev bison
   build_script:
   - cd ${HOME}
-  - git clone https://$GITID:$GITPWD@github.com/Ratoriku/LAVENDER -b eleven --depth=1 kernel
+  - git clone https://$GITID:$GITPWD@github.com/Ratoriku/msm-4.19 -b staging --depth=1 kernel
   - git clone --depth=1 https://github.com/Ratoriku/AnyKernel3.git
-  - git clone --depth=1 https://github.com/arter97/arm64-gcc.git
-  - git clone --depth=1 https://github.com/arter97/arm32-gcc.git
+  - git clone --depth=1 https://github.com/kdrag0n/proton-clang.git cbl
   - cd kernel
   - ./ci-build
