@@ -1,24 +1,22 @@
 env:
   CIRRUS_CLONE_DEPTH: 1
   GITID: ENCRYPTED[77e643d71b80cb0c19742ce4717fe43b42c91f68a7039dd1f1d78fd48966c85c5b3afd23bef21410afa28b82928a8333]
-  GITPWD: ENCRYPTED[9e1963c8749d4c09b3b67cd7e3a72c708faa39ea97536b2a42889767ed958403726a1b4aef62702f28e42a08e1708c12]
+  GITPWD: ENCRYPTED[10c2b5c496ea6fb572d4d89478d90cda8098eb267dd5bfe649137cfe01a2fbb7400a2655151b3a02c12150ac58a71afc]
   chat_id: ENCRYPTED[80e7f2e5a0106ba6d4ad4bae8ff3cb22633e4e65084c5d50a47259ee755fa024335ee38655e58dcb42fc36cc8577e6e2]
   bot_token: ENCRYPTED[af4d4f4b8d4a92ebd8583e1e9a215375e78f37c7664e56a8ee003e8d3a1190e2da231c15dff6b0c2d4fbb16fd86d8d7a]
+  TZ: Asia/Shanghai
+  DEBIAN_FRONTEND: noninteractive
 container:
-  image: ubuntu:latest
+  image: ubuntu:18.04
   cpu: 8
   memory: 8G
   use_in_memory_disk: true
 task:
   setup_script:
-  - apt-get update && apt-get install -y build-essential bc python curl git zip gcc-aarch64-linux-gnu gcc-arm-linux-gnueabi libssl-dev wget libfl-dev
-  - echo "deb http://archive.ubuntu.com/ubuntu hirsute main" >> /etc/apt/sources.list && apt-get update
-  - apt-get --no-install-recommends install libc6 libstdc++6 -y
+  - ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+  - apt-get update && apt-get install -y wget python git gnupg flex bison gperf libsdl1.2-dev squashfs-tools build-essential zip curl libncurses5-dev zlib1g-dev openjdk-8-jre openjdk-8-jdk pngcrush schedtool libxml2 libxml2-utils xsltproc lzop libc6-dev schedtool g++-multilib lib32z1-dev lib32ncurses5-dev gcc-multilib maven tmux screen w3m ncftp liblz4-tool pngquant rsync
   build_script:
   - cd ${HOME}
-  - git clone https://$GITID:$GITPWD@github.com/Ratoriku/LAVENDER -b test --depth=1 kernel
-  - git clone --depth=1 https://github.com/Ratoriku/AnyKernel3.git
-  - git clone --depth=1 https://github.com/arter97/arm64-gcc.git
-  - git clone --depth=1 https://github.com/arter97/arm32-gcc.git
-  - cd kernel
-  - ./ci-build
+  - wget https://raw.githubusercontent.com/Ratoriku/ci_scripts/twrp/build.sh
+  - chmod a+x build.sh
+  - ./build.sh
