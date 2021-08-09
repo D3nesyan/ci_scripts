@@ -15,7 +15,7 @@ mkdir twrp
 cd twrp
 repo init --depth=1 -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-9.0
 repo sync
-git clone https://$GITID:$GITPWD@github.com/Ratoriku/android_device_xiaomi_lavender-twrp -b android-9.0 device/xiaomi/lavender
+git clone https://$GITID:$GITPWD@github.com/Ratoriku/android_device_xiaomi_lavender-twrp -b ofox device/xiaomi/lavender
 
 # Build
 export ALLOW_MISSING_DEPENDENCIES=true
