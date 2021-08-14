@@ -16,7 +16,7 @@ task:
   - apt-get --no-install-recommends install libc6 libstdc++6 -y
   build_script:
   - cd ${HOME}
-  - git clone https://$GITID:$GITPWD@github.com/Ratoriku/LAVENDER -b test --depth=1 kernel
+  - git clone https://$GITID:$GITPWD@github.com/Ratoriku/LAVENDER -b cafest --depth=1 kernel
   - git clone --depth=1 https://github.com/Ratoriku/AnyKernel3.git
   - git clone --depth=1 https://github.com/arter97/arm64-gcc.git
   - git clone --depth=1 https://github.com/arter97/arm32-gcc.git
