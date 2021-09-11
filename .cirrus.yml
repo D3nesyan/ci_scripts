@@ -18,7 +18,6 @@ task:
   - cd ${HOME}
   - git clone https://$GITID:$GITPWD@github.com/ReallySnow-ROM-Testing/android_kernel_google_msm-4.9 -b staging --depth=1 kernel
   - git clone --depth=1 https://github.com/Ratoriku/AnyKernel3.git -b b1c1
-  - git clone --depth=1 https://github.com/arter97/arm64-gcc.git
-  - git clone --depth=1 https://github.com/arter97/arm32-gcc.git
+  - git clone --depth=1 https://github.com/kdrag0n/proton-clang.git cbl
   - cd kernel
   - ./ci-build
