@@ -16,7 +16,7 @@ task:
   - apt-get --no-install-recommends install libc6 libstdc++6 -y
   build_script:
   - cd ${HOME}
-  - git clone https://$GITID:$GITPWD@github.com/ReallySnow-ROM-Testing/android_kernel_google_msm-4.9 -b staging --depth=1 kernel
+  - git clone https://$GITID:$GITPWD@github.com/ReallySnow-ROM-Testing/android_kernel_google_msm-4.9 -b staging-2 --depth=1 kernel
   - git clone --depth=1 https://github.com/Ratoriku/AnyKernel3.git -b b1c1
   - git clone --depth=1 https://github.com/kdrag0n/proton-clang.git cbl
   - cd kernel
